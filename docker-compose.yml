@@ -1,0 +1,28 @@
+version: "3.1"
+services:
+
+    mysql:
+      image: mysql:5.7
+      container_name: directus-extensions-mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=directus
+        - MYSQL_USER=directus
+        - MYSQL_PASSWORD=directus
+      ports:
+        - 53306:3306
+
+    api:
+      build: docker-api
+      container_name: directus-extensions-api
+      working_dir: /var/www/html/
+      environment:
+        DATABASE_HOST: mysql
+        ADMIN_EMAIL: contact@eldarc.com
+        ADMIN_PASSWORD: directus
+      volumes:
+        - ./api:/var/www/html/
+        - ./config/api.php:/var/www/html/config/api.php
+        - ./logs/api:/var/www/html/logs
+      ports:
+        - 9000:80
