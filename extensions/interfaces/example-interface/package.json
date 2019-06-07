@@ -1,0 +1,27 @@
+{
+  "name": "directus-interfaces-example-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "build": "directus-extensions build",
+    "dev": "directus-extensions watch",
+    "dev:inject": "directus-extensions watch ./src ../../../api/public/extensions/custom/interfaces/example-interface",
+    "build-to-api": "directus-extensions build && rm -Rf ../../../api/public/extensions/custom/interfaces/example-interface && cp -Rf ./dist ../../../api/public/extensions/custom/interfaces/example-interface"
+  },
+  "author": "",
+  "dependencies": {
+    "@directus/extension-toolkit": "^0.1.0",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/component-compiler-utils": "^2.6.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "eslint-plugin-react": "^7.13.0",
+    "sass": "^1.17.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

@@ -43,7 +43,7 @@ api: {
 ```
 "scripts": {
     ...,
-    "build-to-api": "directus-extensions build && rm -Rf ../../../api/public/extensions/custom/iterfaces/<interface-name> && cp -Rf ./dist ../../../api/public/extensions/custom/interfaces/<interface-name>"
+    "build-to-api": "directus-extensions build && rm -Rf ../../../api/public/extensions/custom/interfaces/<interface-name> && cp -Rf ./dist ../../../api/public/extensions/custom/interfaces/<interface-name>"
 },
 ```
 Run `npm run build-to-api` to build and copy to the API source.
